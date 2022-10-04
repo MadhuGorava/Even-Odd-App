@@ -7,9 +7,9 @@ class EvenOddApp extends Component {
   state = {count: 0, text: 'Even'}
 
   onIncrement = () => {
-    this.setState(prevState => ({
-      count: prevState.count + Math.ceil(Math.random() * 100),
-      text: prevState.count % 2 === 0 ? 'Even' : 'Odd',
+    this.setState(curState => ({
+      count: Math.ceil(Math.random() * 100),
+      text: curState.count % 2 === 0 ? 'Even' : 'Odd',
     }))
   }
 
@@ -20,7 +20,7 @@ class EvenOddApp extends Component {
         <div className="card-container">
           <h1>Count {count}</h1>
           <div>
-            <h1 className="heading">Count is {text}</h1>
+            <p className="heading">Count is {text}</p>
             <button type="button" onClick={this.onIncrement}>
               Increment
             </button>
